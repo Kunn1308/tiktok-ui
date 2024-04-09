@@ -1,10 +1,7 @@
-import Button from '~/component/Button';
-import './App.css';
-
 function App() {
     return (
         <div className="App">
-            <Button />
+            <h1>Hello</h1>
         </div>
     );
 }
