@@ -23,6 +23,7 @@
 .logo {
     display: flex;
     align-items: center;
+    min-width: 300px;
 }
 
 .search,
@@ -131,4 +132,17 @@
     z-index: -1;
     border-radius: 92px;
     border: 1px solid rgba(22, 24, 35, 0.2);
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+}
+
+.more-btn {
+    font-size: 2rem;
+    margin-left: 20px;
+    padding: 0px 12px 0 8px;
+    font-weight: 400;
+    background-color: transparent;
 }

@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 
 import classNames from 'classnames/bind';
 import styles from './Button.module.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircle } from '@fortawesome/free-solid-svg-icons';
 
 const cx = classNames.bind(styles);
 
@@ -17,6 +19,7 @@ function Button({
     large = false,
     children,
     className,
+    toggled = false,
     leftIcon,
     rightIcon,
     onClick,
@@ -53,6 +56,7 @@ function Button({
         text,
         disabled,
         rounded,
+        toggled,
         leftIcon,
         rightIcon,
     });
@@ -60,7 +64,13 @@ function Button({
     return (
         <Comp className={classes} {...props}>
             {leftIcon && <span className={cx('icon')}>{leftIcon}</span>}
-            <span className={cx('title')}>{children}</span>
+            {toggled ? (
+                <span className={cx('icon-toggle')}>
+                    <FontAwesomeIcon icon={faCircle} />
+                </span>
+            ) : (
+                <span className={cx('title')}>{children}</span>
+            )}
             {rightIcon && <span className={cx('icon')}>{rightIcon}</span>}
         </Comp>
     );

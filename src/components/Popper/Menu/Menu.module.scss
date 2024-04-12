@@ -1,0 +1,34 @@
+//Menu wrapper
+.menu-list {
+    min-width: 223px;
+
+    .menu-item {
+        margin-left: 0;
+    }
+}
+
+.menu-popper {
+    padding-bottom: 8px;
+    overflow: unset;
+    max-height: unset;
+    left: 15px;
+    position: relative;
+}
+
+//Menu items
+.wrapper-item {
+    display: flex;
+    align-items: center;
+    &:hover {
+        background-color: rgba(22, 24, 35, 0.03);
+    }
+}
+
+.menu-item {
+    width: 100%;
+    justify-content: flex-start;
+    border-radius: 0;
+    font-weight: 550;
+    padding: 11px 8px;
+    background-color: transparent;
+}
