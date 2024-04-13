@@ -66,6 +66,10 @@
     align-items: center;
     color: var(--white);
 }
+.dark {
+    left: auto;
+    right: 2px;
+}
 
 .primary {
     background-color: var(--primary);

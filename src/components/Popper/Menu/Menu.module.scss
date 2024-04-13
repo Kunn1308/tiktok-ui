@@ -30,5 +30,35 @@
     border-radius: 0;
     font-weight: 550;
     padding: 11px 8px;
+    line-height: 1.85rem;
     background-color: transparent;
+}
+
+//Header
+.header {
+    position: relative;
+    height: 50px;
+    margin-top: -8px;
+}
+
+.back-btn {
+    width: 50px;
+    height: 100%;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.header-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+//btn-toggle
+.dark {
+    background-color: rgb(11, 224, 155);
+    &:hover {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.08)), rgb(11, 224, 155);
+    }
 }

@@ -65,7 +65,7 @@ function Button({
         <Comp className={classes} {...props}>
             {leftIcon && <span className={cx('icon')}>{leftIcon}</span>}
             {toggled ? (
-                <span className={cx('icon-toggle')}>
+                <span className={cx('icon-toggle', { dark: className })}>
                     <FontAwesomeIcon icon={faCircle} />
                 </span>
             ) : (
