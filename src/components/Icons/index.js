@@ -1,5 +1,13 @@
-export const PaperPlane = () => (
-    <svg width="26" data-e2e="" height="26" viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+export const PaperPlaneIcon = ({ width = '2.6rem', height = '2.6rem', className }) => (
+    <svg
+        className={className}
+        width={width}
+        data-e2e=""
+        height={height}
+        viewBox="0 0 48 48"
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+    >
         <path
             fillRule="evenodd"
             clipRule="evenodd"
@@ -8,8 +16,16 @@ export const PaperPlane = () => (
     </svg>
 );
 
-export const Message = () => (
-    <svg width="32" data-e2e="" height="32" viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+export const MessageIcon = ({ width = '3.2rem', height = '3.2rem', className }) => (
+    <svg
+        className={className}
+        width={width}
+        data-e2e=""
+        height={height}
+        viewBox="0 0 32 32"
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+    >
         <path
             fillRule="evenodd"
             clipRule="evenodd"
@@ -18,11 +34,12 @@ export const Message = () => (
     </svg>
 );
 
-export const Content = () => (
+export const ContentIcon = ({ width = '2rem', height = '2rem', className }) => (
     <svg
-        width="2rem"
+        className={className}
+        width={width}
         data-e2e=""
-        height="2rem"
+        height={height}
         viewBox="0 0 20 20"
         fill="currentColor"
         xmlns="http://www.w3.org/2000/svg"
@@ -41,11 +58,12 @@ export const Content = () => (
     </svg>
 );
 
-export const Language = () => (
+export const LanguageIcon = ({ width = '2rem', height = '2rem', className }) => (
     <svg
-        width="2rem"
+        className={className}
+        width={width}
         data-e2e=""
-        height="2rem"
+        height={height}
         viewBox="0 0 48 48"
         fill="currentColor"
         xmlns="http://www.w3.org/2000/svg"
@@ -58,11 +76,12 @@ export const Language = () => (
     </svg>
 );
 
-export const Question = () => (
+export const QuestionIcon = ({ width = '2rem', height = '2rem', className }) => (
     <svg
-        width="2rem"
+        className={className}
+        width={width}
         data-e2e=""
-        height="2rem"
+        height={height}
         viewBox="0 0 48 48"
         fill="currentColor"
         xmlns="http://www.w3.org/2000/svg"
@@ -75,11 +94,12 @@ export const Question = () => (
     </svg>
 );
 
-export const KeyBoard = () => (
+export const KeyBoardIcon = ({ width = '2rem', height = '2rem', className }) => (
     <svg
-        width="2rem"
+        className={className}
+        width={width}
         data-e2e=""
-        height="2rem"
+        height={height}
         viewBox="0 0 48 48"
         fill="currentColor"
         xmlns="http://www.w3.org/2000/svg"
@@ -92,11 +112,12 @@ export const KeyBoard = () => (
     </svg>
 );
 
-export const Moon = () => (
+export const MoonIcon = ({ width = '2rem', height = '2rem', className }) => (
     <svg
-        width="2rem"
+        className={className}
+        width={width}
         data-e2e=""
-        height="2rem"
+        height={height}
         viewBox="0 0 48 48"
         fill="currentColor"
         xmlns="http://www.w3.org/2000/svg"
@@ -109,11 +130,12 @@ export const Moon = () => (
     </svg>
 );
 
-export const User = () => (
+export const UserIcon = ({ width = '2rem', height = '2rem', className }) => (
     <svg
-        width="2rem"
+        className={className}
+        width={width}
         data-e2e=""
-        height="2rem"
+        height={height}
         viewBox="0 0 48 48"
         fill="currentColor"
         xmlns="http://www.w3.org/2000/svg"
@@ -126,11 +148,12 @@ export const User = () => (
     </svg>
 );
 
-export const BookMark = () => (
+export const BookMarkIcon = ({ width = '2rem', height = '2rem', className }) => (
     <svg
-        width="2rem"
+        className={className}
+        width={width}
         data-e2e=""
-        height="2rem"
+        height={height}
         viewBox="0 0 48 48"
         fill="currentColor"
         xmlns="http://www.w3.org/2000/svg"
@@ -143,11 +166,12 @@ export const BookMark = () => (
     </svg>
 );
 
-export const CoinsTikTok = () => (
+export const CoinsTikTokIcon = ({ width = '2rem', height = '2rem', className }) => (
     <svg
-        width="2rem"
+        className={className}
+        width={width}
         data-e2e=""
-        height="2rem"
+        height={height}
         viewBox="0 0 20 20"
         fill="currentColor"
         xmlns="http://www.w3.org/2000/svg"
@@ -165,11 +189,12 @@ export const CoinsTikTok = () => (
     </svg>
 );
 
-export const LiveStream = () => (
+export const LiveStreamIcon = ({ width = '2rem', height = '2rem', className }) => (
     <svg
-        width="2rem"
+        className={className}
+        width={width}
         data-e2e=""
-        height="2rem"
+        height={height}
         viewBox="0 0 48 48"
         fill="currentColor"
         xmlns="http://www.w3.org/2000/svg"
@@ -187,11 +212,12 @@ export const LiveStream = () => (
     </svg>
 );
 
-export const Setting = () => (
+export const SettingIcon = ({ width = '2rem', height = '2rem', className }) => (
     <svg
-        width="2rem"
+        className={className}
+        width={width}
         data-e2e=""
-        height="2rem"
+        height={height}
         viewBox="0 0 48 48"
         fill="currentColor"
         xmlns="http://www.w3.org/2000/svg"
@@ -204,11 +230,12 @@ export const Setting = () => (
     </svg>
 );
 
-export const Logout = () => (
+export const LogoutIcon = ({ width = '2rem', height = '2rem', className }) => (
     <svg
-        width="2rem"
+        className={className}
+        width={width}
         data-e2e=""
-        height="2rem"
+        height={height}
         viewBox="0 0 48 48"
         fill="currentColor"
         xmlns="http://www.w3.org/2000/svg"
@@ -217,6 +244,42 @@ export const Logout = () => (
             fillRule="evenodd"
             clipRule="evenodd"
             d="M24.1716 26L7 26C6.44771 26 6 25.5523 6 25L6 23C6 22.4477 6.44771 22 7 22L24.1716 22L20.2929 18.1213C19.9024 17.7308 19.9024 17.0976 20.2929 16.7071L21.7071 15.2929C22.0976 14.9024 22.7308 14.9024 23.1213 15.2929L30.4142 22.5858C31.1953 23.3668 31.1953 24.6332 30.4142 25.4142L23.1213 32.7071C22.7308 33.0976 22.0976 33.0976 21.7071 32.7071L20.2929 31.2929C19.9024 30.9024 19.9024 30.2692 20.2929 29.8787L24.1716 26ZM36 43L27 43C26.4477 43 26 42.5523 26 42L26 40C26 39.4477 26.4477 39 27 39L36 39C37.1046 39 38 38.1046 38 37L38 11C38 9.89543 37.1046 9 36 9L27 9C26.4477 9 26 8.55228 26 8L26 6C26 5.44771 26.4477 5 27 5L36 5C39.3137 5 42 7.68629 42 11L42 37C42 40.3137 39.3137 43 36 43Z"
+        ></path>
+    </svg>
+);
+
+export const PlusIcon = ({ width = '2rem', height = '2rem', className }) => (
+    <svg
+        className={className}
+        width={width}
+        data-e2e=""
+        height={height}
+        viewBox="0 0 16 16"
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+    >
+        <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M8 2.5C7.58579 2.5 7.25 2.83579 7.25 3.25V7.25H3.25C2.83579 7.25 2.5 7.58579 2.5 8C2.5 8.41421 2.83579 8.75 3.25 8.75H7.25V12.75C7.25 13.1642 7.58579 13.5 8 13.5C8.41421 13.5 8.75 13.1642 8.75 12.75V8.75H12.75C13.1642 8.75 13.5 8.41421 13.5 8C13.5 7.58579 13.1642 7.25 12.75 7.25H8.75V3.25C8.75 2.83579 8.41421 2.5 8 2.5Z"
+        ></path>
+    </svg>
+);
+
+export const SearchIcon = ({ width = '2.4rem', height = '2.4rem', className }) => (
+    <svg
+        className={className}
+        width={width}
+        data-e2e=""
+        height={height}
+        viewBox="0 0 48 48"
+        fill="rgba(22, 24, 35, .34)"
+        xmlns="http://www.w3.org/2000/svg"
+    >
+        <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M22 10C15.3726 10 10 15.3726 10 22C10 28.6274 15.3726 34 22 34C28.6274 34 34 28.6274 34 22C34 15.3726 28.6274 10 22 10ZM6 22C6 13.1634 13.1634 6 22 6C30.8366 6 38 13.1634 38 22C38 25.6974 36.7458 29.1019 34.6397 31.8113L43.3809 40.5565C43.7712 40.947 43.7712 41.5801 43.3807 41.9705L41.9665 43.3847C41.5759 43.7753 40.9426 43.7752 40.5521 43.3846L31.8113 34.6397C29.1019 36.7458 25.6974 38 22 38C13.1634 38 6 30.8366 6 22Z"
         ></path>
     </svg>
 );

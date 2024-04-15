@@ -1,13 +1,7 @@
 import { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-    faCircleXmark,
-    faSpinner,
-    faMagnifyingGlass,
-    faPlus,
-    faEllipsisVertical,
-} from '@fortawesome/free-solid-svg-icons';
+import { faCircleXmark, faSpinner, faEllipsisVertical } from '@fortawesome/free-solid-svg-icons';
 
 import Button from '~/components/Button';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
@@ -18,30 +12,33 @@ import styles from './Header.module.scss';
 import images from '~/assets/images';
 import AccountItem from '~/components/AccountItem';
 import Menu from '~/components/Popper/Menu';
+import Image from '~/components/Image';
 import {
-    PaperPlane,
-    Message,
-    Content,
-    Language,
-    Question,
-    KeyBoard,
-    Moon,
-    User,
-    BookMark,
-    CoinsTikTok,
-    LiveStream,
-    Setting,
-    Logout,
-} from '~/assets/icon';
+    PaperPlaneIcon,
+    MessageIcon,
+    ContentIcon,
+    LanguageIcon,
+    QuestionIcon,
+    KeyBoardIcon,
+    MoonIcon,
+    UserIcon,
+    BookMarkIcon,
+    CoinsTikTokIcon,
+    LiveStreamIcon,
+    SettingIcon,
+    LogoutIcon,
+    PlusIcon,
+    SearchIcon,
+} from '~/components/Icons';
 const cx = classNames.bind(styles);
 
 const MENU_ITEMS = [
     {
-        icon: <Content />,
+        icon: <ContentIcon />,
         title: 'Trung tâm Nhà sáng tạo LIVE',
     },
     {
-        icon: <Language />,
+        icon: <LanguageIcon />,
         title: 'Tiếng Việt',
         children: {
             title: 'Ngôn ngữ',
@@ -75,16 +72,16 @@ const MENU_ITEMS = [
         },
     },
     {
-        icon: <Question />,
+        icon: <QuestionIcon />,
         title: 'Phản hồi và trợ giúp',
         to: '/feedback',
     },
     {
-        icon: <KeyBoard />,
+        icon: <KeyBoardIcon />,
         title: 'Phím tắt trên bàn phím',
     },
     {
-        icon: <Moon />,
+        icon: <MoonIcon />,
         title: 'Chế độ tối',
         toggle: true,
     },
@@ -115,32 +112,32 @@ function Header() {
 
     const userMenu = [
         {
-            icon: <User />,
+            icon: <UserIcon />,
             title: 'Xem hồ sơ',
             to: '/@nari_gamingg',
         },
         {
-            icon: <BookMark />,
+            icon: <BookMarkIcon />,
             title: 'Yêu thích',
             to: '/@nari_gamingg',
         },
         {
-            icon: <CoinsTikTok />,
-            title: 'Nhận xu',
+            icon: <CoinsTikTokIcon />,
+            title: 'Nhận Xu',
             to: '/coin',
         },
         {
-            icon: <LiveStream />,
+            icon: <LiveStreamIcon />,
             title: 'LIVE Studio',
         },
         {
-            icon: <Setting />,
+            icon: <SettingIcon />,
             title: 'Cài đặt',
             to: '/setting',
         },
         ...MENU_ITEMS,
         {
-            icon: <Logout />,
+            icon: <LogoutIcon />,
             title: 'Đăng xuất',
             to: '/logout',
             separate: true,
@@ -185,25 +182,25 @@ function Header() {
                         <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />
 
                         <button className={cx('search-btn')}>
-                            <FontAwesomeIcon icon={faMagnifyingGlass} />
+                            <SearchIcon />
                         </button>
                         <div className={cx('border')}></div>
                     </div>
                 </HeadlessTippy>
                 <div className={cx('actions')}>
-                    <Button text leftIcon={<FontAwesomeIcon icon={faPlus} />}>
+                    <Button text leftIcon={<PlusIcon />}>
                         Tải lên
                     </Button>
                     {currentUser ? (
                         <>
                             <Tippy content="Tin nhắn" placement="bottom">
                                 <button className={cx('action-btn')}>
-                                    <PaperPlane />
+                                    <PaperPlaneIcon />
                                 </button>
                             </Tippy>
                             <Tippy content="Hộp thư" placement="bottom">
                                 <button className={cx('action-btn')}>
-                                    <Message />
+                                    <MessageIcon />
                                 </button>
                             </Tippy>
                         </>
@@ -215,7 +212,7 @@ function Header() {
 
                     <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                         {currentUser ? (
-                            <img
+                            <Image
                                 width="32"
                                 src="https://p16-sign-sg.tiktokcdn.com/aweme/100x100/tos-alisg-avt-0068/5ddbe69c49c17c1c5c513ec967b1871e.jpeg?lk3s=a5d48078&x-expires=1713236400&x-signature=otkNrOln0NyRlOx4iW8T02pfr6I%3D"
                                 className={cx('user-avatar')}
