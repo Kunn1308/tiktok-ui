@@ -1,9 +1,20 @@
 //Menu wrapper
 .menu-list {
     min-width: 223px;
+    position: relative;
 
     .menu-item {
         margin-left: 0;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        right: 16px;
+        top: -16px;
+        border-style: solid;
+        border-width: 9px;
+        border-color: transparent transparent rgb(255, 255, 255) transparent;
     }
 }
 
@@ -11,7 +22,6 @@
     padding-bottom: 8px;
     overflow: unset;
     max-height: unset;
-    left: 15px;
     position: relative;
 }
 
@@ -29,9 +39,14 @@
     justify-content: flex-start;
     border-radius: 0;
     font-weight: 550;
-    padding: 11px 8px;
+    padding: 10px 8px;
     line-height: 1.85rem;
     background-color: transparent;
+    color: var(--text-color);
+
+    &.separate {
+        border-top: 1px solid rgba(22, 24, 35, 0.12);
+    }
 }
 
 //Header

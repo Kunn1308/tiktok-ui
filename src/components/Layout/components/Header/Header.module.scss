@@ -134,9 +134,13 @@
     border: 1px solid rgba(22, 24, 35, 0.2);
 }
 
+//Action
 .actions {
     display: flex;
     align-items: center;
+}
+.action-btn:nth-child(2) {
+    margin-left: 32px;
 }
 
 .more-btn {
@@ -145,4 +149,19 @@
     padding: 0px 12px 0 8px;
     font-weight: 400;
     background-color: transparent;
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    color: rgb(22, 24, 35);
+    background-color: transparent;
+    margin-left: 19px;
+    cursor: pointer;
+}
+
+.user-avatar {
+    margin-left: 24px;
+    cursor: pointer;
+    border-radius: 50%;
 }
