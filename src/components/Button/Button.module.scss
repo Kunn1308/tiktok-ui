@@ -6,9 +6,10 @@
     font-weight: 700;
     font-family: 'TikTokFont', sans-serif;
     min-width: 100px;
-    padding: 8px 8px;
+    padding: 7px 8px;
     border-radius: 4px;
     cursor: pointer;
+    line-height: 2rem;
     background-color: var(--white);
     border: 1px solid transparent;
     user-select: none;
@@ -96,6 +97,8 @@
 }
 
 .text {
+    line-height: 2.4rem;
+    padding: 5px 0;
     align-items: center;
     border: 1px solid rgba(22, 24, 35, 0.12);
     font-weight: 600;
