@@ -5,6 +5,7 @@ import classNames from 'classnames/bind';
 
 import AccountItem from '~/components/AccountItem';
 import styles from './Search.module.scss';
+import { useDebounce } from '~/hooks';
 import { SearchIcon, LoadingIcon, ClearIcon } from '~/components/Icons';
 
 const cx = classNames.bind(styles);
@@ -14,16 +15,17 @@ function Search() {
     const [searchResult, setSearchResult] = useState([]);
     const [showResult, setShowResult] = useState(true);
     const [loading, setLoading] = useState(false);
+    const debounced = useDebounce(searchvalue, 500);
 
     const inputRef = useRef();
 
     useEffect(() => {
-        if (!searchvalue.trim()) {
+        if (!debounced.trim()) {
             setSearchResult([]);
             return;
         }
         setLoading(true);
-        fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(searchvalue)}&type=less`)
+        fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(debounced)}&type=less`)
             .then((res) => res.json())
             .then((res) => {
                 setSearchResult(res.data);
@@ -32,7 +34,7 @@ function Search() {
             .catch(() => {
                 setLoading(false);
             });
-    }, [searchvalue]);
+    }, [debounced]);
 
     const handleClear = () => {
         setSearchValue('');
@@ -69,6 +71,9 @@ function Search() {
                     onChange={(e) => {
                         if (!e.target.value.startsWith(' ')) {
                             setSearchValue(e.target.value);
+                            if (e.target.value.endsWith('  ')) {
+                                setSearchValue(searchvalue.trim());
+                            }
                         }
                     }}
                     spellCheck={false}
