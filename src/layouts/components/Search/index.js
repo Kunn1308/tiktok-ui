@@ -4,12 +4,12 @@ import HeadlessTippy from '@tippyjs/react/headless';
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
 
-import * as searchServices from '~/apiServices/searchServices';
+import * as searchServices from '~/services/searchService';
 import AccountItem from '~/components/AccountItem';
 import styles from './Search.module.scss';
 import { useDebounce } from '~/hooks';
 import { SearchIcon, LoadingIcon, ClearIcon } from '~/components/Icons';
-import routesConfig from '~/config/routes';
+import config from '~/config';
 
 const cx = classNames.bind(styles);
 
@@ -72,7 +72,7 @@ function Search() {
                             {searchResult.map((result) => (
                                 <AccountItem key={result.id} data={result} />
                             ))}
-                            <Link to={routesConfig.search}>
+                            <Link to={config.routes.search}>
                                 <p className={cx('search-footer')}>{`Xem tất cả kết quả dành cho "${searchvalue}"`}</p>
                             </Link>
                         </PopperWrapper>
@@ -96,7 +96,7 @@ function Search() {
                     )}
                     {loading && <LoadingIcon className={cx('loading')} />}
 
-                    <Link to={routesConfig.search} className={cx('search-btn')}>
+                    <Link to={config.routes.search} className={cx('search-btn')}>
                         <SearchIcon />
                     </Link>
                     <div className={cx('border')}></div>
