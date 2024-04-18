@@ -12,12 +12,13 @@ function Button({
     primary = false,
     outline = false,
     text = false,
+    rounded = false,
     disabled = false,
     small = false,
     large = false,
+    toggled = false,
     children,
     className,
-    toggled = false,
     leftIcon,
     rightIcon,
     onClick,
@@ -52,8 +53,9 @@ function Button({
         small,
         large,
         text,
-        disabled,
+        rounded,
         toggled,
+        disabled,
         leftIcon,
         rightIcon,
     });
@@ -68,7 +70,21 @@ function Button({
 }
 
 Button.propTypes = {
+    to: PropTypes.string,
+    href: PropTypes.string,
+    primary: PropTypes.bool,
+    outline: PropTypes.bool,
+    text: PropTypes.bool,
+    rounded: PropTypes.bool,
+    disabled: PropTypes.bool,
+    small: PropTypes.bool,
+    large: PropTypes.bool,
+    toggled: PropTypes.bool,
     children: PropTypes.node.isRequired,
+    className: PropTypes.string,
+    leftIcon: PropTypes.node,
+    rightIcon: PropTypes.node,
+    onClick: PropTypes.func,
 };
 
 export default Button;
