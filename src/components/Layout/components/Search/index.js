@@ -2,12 +2,14 @@ import { useEffect, useRef, useState } from 'react';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import HeadlessTippy from '@tippyjs/react/headless';
 import classNames from 'classnames/bind';
+import { Link } from 'react-router-dom';
 
 import * as searchServices from '~/apiServices/searchServices';
 import AccountItem from '~/components/AccountItem';
 import styles from './Search.module.scss';
 import { useDebounce } from '~/hooks';
 import { SearchIcon, LoadingIcon, ClearIcon } from '~/components/Icons';
+import routesConfig from '~/config/routes';
 
 const cx = classNames.bind(styles);
 
@@ -45,52 +47,62 @@ function Search() {
         setShowResult(false);
     };
 
-    return (
-        <HeadlessTippy
-            interactive
-            visible={showResult && searchResult.length > 0}
-            render={(attrs) => (
-                <div className={cx('search-result')} tabIndex="-1" {...attrs}>
-                    <PopperWrapper>
-                        <h4 className={cx('search-title')}>Accounts</h4>
-                        {searchResult.map((result) => (
-                            <AccountItem key={result.id} data={result} />
-                        ))}
-                        <p className={cx('search-footer')}>{`Xem tất cả kết quả dành cho "${searchvalue}"`}</p>
-                    </PopperWrapper>
-                </div>
-            )}
-            onClickOutside={handleHideResult}
-        >
-            <div className={cx('search')}>
-                <input
-                    ref={inputRef}
-                    value={searchvalue}
-                    placeholder="Tìm kiếm"
-                    onChange={(e) => {
-                        if (!e.target.value.startsWith(' ')) {
-                            setSearchValue(e.target.value);
-                            if (e.target.value.endsWith('  ')) {
-                                setSearchValue(searchvalue.trim());
-                            }
-                        }
-                    }}
-                    spellCheck={false}
-                    onFocus={() => setShowResult(true)}
-                />
-                {!!searchvalue && !loading && (
-                    <button className={cx('clear')} onClick={handleClear}>
-                        <ClearIcon />
-                    </button>
-                )}
-                {loading && <LoadingIcon className={cx('loading')} />}
+    const handleChange = (e) => {
+        const searchValue = e.target.value;
 
-                <button className={cx('search-btn')}>
-                    <SearchIcon />
-                </button>
-                <div className={cx('border')}></div>
-            </div>
-        </HeadlessTippy>
+        if (!e.target.value.startsWith(' ')) {
+            setSearchValue(searchValue);
+            // if (e.target.value.endsWith('  ')) {
+            //     setSearchValue(searchvalue.trim());
+            // }
+        }
+    };
+
+    return (
+        /*Using a wrapper <div> tag around the reference element solves 
+        this by creating a new parentNode context. */
+        <div>
+            <HeadlessTippy
+                interactive
+                visible={showResult && searchResult.length > 0}
+                render={(attrs) => (
+                    <div className={cx('search-result')} tabIndex="-1" {...attrs}>
+                        <PopperWrapper>
+                            <h4 className={cx('search-title')}>Accounts</h4>
+                            {searchResult.map((result) => (
+                                <AccountItem key={result.id} data={result} />
+                            ))}
+                            <Link to={routesConfig.search}>
+                                <p className={cx('search-footer')}>{`Xem tất cả kết quả dành cho "${searchvalue}"`}</p>
+                            </Link>
+                        </PopperWrapper>
+                    </div>
+                )}
+                onClickOutside={handleHideResult}
+            >
+                <div className={cx('search')}>
+                    <input
+                        ref={inputRef}
+                        value={searchvalue}
+                        placeholder="Tìm kiếm"
+                        onChange={handleChange}
+                        spellCheck={false}
+                        onFocus={() => setShowResult(true)}
+                    />
+                    {!!searchvalue && !loading && (
+                        <button className={cx('clear')} onClick={handleClear}>
+                            <ClearIcon />
+                        </button>
+                    )}
+                    {loading && <LoadingIcon className={cx('loading')} />}
+
+                    <Link to={routesConfig.search} className={cx('search-btn')}>
+                        <SearchIcon />
+                    </Link>
+                    <div className={cx('border')}></div>
+                </div>
+            </HeadlessTippy>
+        </div>
     );
 }
 

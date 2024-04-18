@@ -1,6 +1,7 @@
 import classNames from 'classnames/bind';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
+import { Link } from 'react-router-dom';
 
 import Button from '~/components/Button';
 import styles from './Header.module.scss';
@@ -25,6 +26,7 @@ import {
     EllipsisIcon,
 } from '~/components/Icons';
 import Search from '../Search';
+import routesConfig from '~/config/routes';
 const cx = classNames.bind(styles);
 
 const MENU_ITEMS = [
@@ -47,21 +49,6 @@ const MENU_ITEMS = [
                     type: 'language',
                     code: 'en',
                     title: 'English',
-                    children: {
-                        title: 'bàn phím',
-                        data: [
-                            {
-                                type: 'board',
-                                code: 'vn',
-                                title: 'Tiếng Việt 1',
-                            },
-                            {
-                                type: 'board',
-                                code: 'en',
-                                title: 'English 1',
-                            },
-                        ],
-                    },
                 },
             ],
         },
@@ -84,7 +71,6 @@ const MENU_ITEMS = [
 
 function Header() {
     const currentUser = true;
-    console.log('re-render');
 
     const handleMenuChange = (menuItem) => {
         switch (menuItem.type) {
@@ -140,7 +126,9 @@ function Header() {
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
                 <div className={cx('logo')}>
-                    <img src={images.logo} alt="tiktok"></img>
+                    <Link to={routesConfig.home} className={cx('logo-link')}>
+                        <img src={images.logo} alt="tiktok"></img>
+                    </Link>
                 </div>
 
                 <Search />
@@ -172,7 +160,7 @@ function Header() {
                         {currentUser ? (
                             <Image
                                 width="32"
-                                src="https://p16-sign-sg.tiktokcdn.com/aweme/100x100/tos-alisg-avt-0068/5ddbe69c49c17c1c5c513ec967b1871e.jpeg?lk3s=a5d48078&x-expires=1713236400&x-signature=otkNrOln0NyRlOx4iW8T02pfr6I%3D"
+                                src="https://p16-sign-sg.tiktokcdn.com/aweme/720x720/tos-alisg-avt-0068/dd37b932b9ec183ecf897f470015ad58.jpeg?lk3s=a5d48078&x-expires=1713510000&x-signature=jyJC0F3w7fO%2BhVqUDJqEDdTHK24%3D"
                                 className={cx('user-avatar')}
                                 alt="Ngọc Kunn"
                             />

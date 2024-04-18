@@ -4,11 +4,16 @@
     --search-top-spacer: 9px;
     --search-button-width: 52px;
 
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
     display: flex;
     justify-content: center;
-    height: var(--default-layout-header-height, 60px);
     width: 100%;
+    height: var(--default-layout-header-height);
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 1px;
+    background-color: var(--white);
 }
 
 .inner {
@@ -24,6 +29,10 @@
     display: flex;
     align-items: center;
     min-width: 300px;
+}
+
+.logo-link {
+    display: flex;
 }
 
 //Action
@@ -71,7 +80,7 @@
     font-size: 1.4rem;
     font-weight: 600;
     color: var(--white);
-    font-family: 'TikTokFont', sans-serif;
+    font-family: var(--font-family);
     border-radius: 10px;
     background-color: var(--primary);
 }

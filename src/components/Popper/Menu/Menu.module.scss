@@ -20,9 +20,13 @@
 
 .menu-popper {
     padding-bottom: 8px;
-    overflow: unset;
-    max-height: unset;
     position: relative;
+    max-height: unset;
+}
+
+.menu-body {
+    overflow-y: auto;
+    max-height: 590px;
 }
 
 //Menu items
@@ -54,6 +58,7 @@
     position: relative;
     height: 50px;
     margin-top: -8px;
+    flex-shrink: 0;
 }
 
 .back-btn {
