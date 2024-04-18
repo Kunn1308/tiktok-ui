@@ -37,17 +37,6 @@
     justify-content: center;
 }
 
-.rounded {
-    font-size: 1.4rem;
-    border-radius: 999px;
-    border: 1px solid rgba(22, 24, 35, 0.12);
-    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 8px;
-
-    &:hover {
-        border-color: rgba(22, 24, 35, 0.2);
-    }
-}
-
 .toggled {
     position: relative;
     min-width: 44px;
@@ -56,23 +45,15 @@
     margin-left: auto !important;
     margin-right: 8px;
     border-color: transparent;
+    font-size: 1.4rem;
+    padding: 0;
+    border: none;
+    border-radius: 999px;
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 8px;
     &:hover {
         border-color: transparent;
         background-color: rgba(22, 24, 35, 0.16);
     }
-}
-
-.icon-toggle {
-    position: absolute;
-    left: 2px;
-    font-size: 2rem;
-    display: flex;
-    align-items: center;
-    color: var(--white);
-}
-.dark {
-    left: auto;
-    right: 2px;
 }
 
 .primary {

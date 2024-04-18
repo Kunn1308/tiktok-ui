@@ -1,9 +1,8 @@
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import classNames from 'classnames/bind';
 import styles from './Button.module.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircle } from '@fortawesome/free-solid-svg-icons';
 
 const cx = classNames.bind(styles);
 
@@ -14,7 +13,6 @@ function Button({
     outline = false,
     text = false,
     disabled = false,
-    rounded = false,
     small = false,
     large = false,
     children,
@@ -55,7 +53,6 @@ function Button({
         large,
         text,
         disabled,
-        rounded,
         toggled,
         leftIcon,
         rightIcon,
@@ -64,16 +61,14 @@ function Button({
     return (
         <Comp className={classes} {...props}>
             {leftIcon && <span className={cx('icon')}>{leftIcon}</span>}
-            {toggled ? (
-                <span className={cx('icon-toggle', { dark: className })}>
-                    <FontAwesomeIcon icon={faCircle} />
-                </span>
-            ) : (
-                <span className={cx('title')}>{children}</span>
-            )}
+            {toggled ? <>{children}</> : <span className={cx('title')}>{children}</span>}
             {rightIcon && <span className={cx('icon')}>{rightIcon}</span>}
         </Comp>
     );
 }
+
+Button.propTypes = {
+    children: PropTypes.node.isRequired,
+};
 
 export default Button;

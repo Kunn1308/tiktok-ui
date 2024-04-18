@@ -82,3 +82,20 @@
         background: linear-gradient(0deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.08)), rgb(11, 224, 155);
     }
 }
+
+.icon-toggle {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 2px;
+    border-radius: 100%;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    background-color: var(--white);
+}
+
+.dark .icon-toggle {
+    left: auto;
+    right: 2px;
+}

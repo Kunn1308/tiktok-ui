@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useEffect, useRef, useState } from 'react';
 import { Wrapper as PopperWrapper } from '~/components/Popper';
 import HeadlessTippy from '@tippyjs/react/headless';
@@ -105,5 +106,7 @@ function Search() {
         </div>
     );
 }
-
+AccountItem.propTypes = {
+    data: PropTypes.object,
+};
 export default Search;

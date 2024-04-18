@@ -16,7 +16,9 @@ function MenuItem({ data, onClick }) {
                 {data.title}
             </Button>
             {data.toggle && (
-                <Button className={cx(toggle && 'dark')} rounded toggled onClick={() => setToggle(!toggle)}></Button>
+                <Button className={cx(toggle && 'dark')} toggled onClick={() => setToggle(!toggle)}>
+                    <span className={cx('icon-toggle')}></span>
+                </Button>
             )}
         </div>
     );

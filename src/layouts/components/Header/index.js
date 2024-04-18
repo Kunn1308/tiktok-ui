@@ -27,6 +27,7 @@ import {
 } from '~/components/Icons';
 import Search from '../Search';
 import config from '~/config';
+
 const cx = classNames.bind(styles);
 
 const MENU_ITEMS = [
