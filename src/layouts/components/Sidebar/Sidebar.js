@@ -16,6 +16,7 @@ import {
     LiveIcon,
     LiveActiveIcon,
 } from '~/components/Icons';
+import FollowingAccounts from '~/components/FollowingAccounts';
 
 const cx = classNames.bind(styles);
 
@@ -57,6 +58,8 @@ function Sidebar() {
                 <MenuItem title="LIVE" to={config.routes.live} icon={<LiveIcon />} activeIcon={<LiveActiveIcon />} />
                 <MenuItem title="Hồ sơ" to={'/@nari_gamingg'} icon={IconImage} activeIcon={IconImage} />
             </Menu>
+
+            <FollowingAccounts label="Các tài khoản đang follow" />
         </aside>
     );
 }
