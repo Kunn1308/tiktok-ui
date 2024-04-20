@@ -9,7 +9,7 @@ import styles from './Search.module.scss';
 import { useDebounce } from '~/hooks';
 import { SearchIcon, LoadingIcon, ClearIcon } from '~/components/Icons';
 import config from '~/config';
-import SearchResult from './SearchResult';
+import AccountItem from '~/components/AccountItem';
 
 const cx = classNames.bind(styles);
 
@@ -69,7 +69,9 @@ function Search() {
                     <div className={cx('search-result')} tabIndex="-1" {...attrs}>
                         <PopperWrapper>
                             <h4 className={cx('search-title')}>Accounts</h4>
-                            {Array.isArray(searchResult) && <SearchResult data={searchResult} />}
+                            {searchResult.map((result) => (
+                                <AccountItem key={result.id} data={result} />
+                            ))}
                             <Link to={config.routes.search}>
                                 <p className={cx('search-footer')}>{`Xem tất cả kết quả dành cho "${searchvalue}"`}</p>
                             </Link>
