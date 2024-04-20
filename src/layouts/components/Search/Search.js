@@ -30,6 +30,7 @@ function Search() {
         const fecthApi = async () => {
             setLoading(true);
             const result = await searchServices.search(debouncedValue);
+            console.log(result);
             setSearchResult(result);
             setLoading(false);
         };
@@ -52,9 +53,6 @@ function Search() {
 
         if (!e.target.value.startsWith(' ')) {
             setSearchValue(searchValue);
-            // if (e.target.value.endsWith('  ')) {
-            //     setSearchValue(searchvalue.trim());
-            // }
         }
     };
     console.log(searchResult);
