@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 import classNames from 'classnames/bind';
 
 import styles from './Sidebar.module.scss';
@@ -17,6 +18,7 @@ import {
     LiveActiveIcon,
 } from '~/components/Icons';
 import FollowingAccounts from '~/components/FollowingAccounts';
+import Footer from '../Footer';
 
 const cx = classNames.bind(styles);
 
@@ -60,6 +62,7 @@ function Sidebar() {
             </Menu>
 
             <FollowingAccounts label="Các tài khoản đang follow" />
+            <Footer />
         </aside>
     );
 }

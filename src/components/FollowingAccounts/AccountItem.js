@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import styles from './FollowingAccounts.module.scss';
 import { TickIcon } from '~/components/Icons';
@@ -16,12 +16,14 @@ function AccountItem() {
             <div className={cx('item-info')}>
                 <p className={cx('nickname')}>
                     <strong>ttechstore</strong>
-                    {/* <TickIcon className={cx('check')} /> */}
+                    <TickIcon className={cx('check')} />
                 </p>
                 <p className={cx('name')}>T-Tech</p>
             </div>
         </div>
     );
 }
+
+AccountItem.propTypes = {};
 
 export default AccountItem;

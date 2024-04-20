@@ -1,11 +1,12 @@
 .wrapper {
     border-top: 1px solid rgba(22, 24, 35, 0.12);
+    padding: 15px 0;
 }
 
 .label {
     font-size: 1.4rem;
     color: #161823bf;
-    padding: 15px 8px 0;
+    padding: 0 8px;
     margin-bottom: 8px;
     font-weight: 600;
     line-height: 18px;
@@ -14,6 +15,7 @@
 .account-item {
     display: flex;
     padding: 8px;
+    cursor: pointer;
 }
 
 .avartar {
@@ -50,4 +52,5 @@
     padding: 0 8px;
     margin-top: 8px;
     cursor: pointer;
+    max-width: 90px;
 }
