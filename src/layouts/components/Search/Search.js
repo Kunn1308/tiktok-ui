@@ -9,7 +9,7 @@ import styles from './Search.module.scss';
 import { useDebounce } from '~/hooks';
 import { SearchIcon, LoadingIcon, ClearIcon } from '~/components/Icons';
 import config from '~/config';
-import AccountItem from '~/components/AccountItem';
+import SearchResult from './SearchResult';
 
 const cx = classNames.bind(styles);
 
@@ -30,7 +30,6 @@ function Search() {
         const fecthApi = async () => {
             setLoading(true);
             const result = await searchServices.search(debouncedValue);
-            console.log(result);
             setSearchResult(result);
             setLoading(false);
         };
@@ -53,22 +52,24 @@ function Search() {
 
         if (!e.target.value.startsWith(' ')) {
             setSearchValue(searchValue);
+            // if (e.target.value.endsWith('  ')) {
+            //     setSearchValue(searchvalue.trim());
+            // }
         }
     };
-    console.log(searchResult);
+
     return (
         /*Using a wrapper <div> tag around the reference element solves 
         this by creating a new parentNode context. */
         <div>
             <HeadlessTippy
                 interactive
-                visible={showResult && Array.isArray(searchResult) && searchResult.length > 0}
+                visible={showResult && searchResult.length > 0}
                 render={(attrs) => (
                     <div className={cx('search-result')} tabIndex="-1" {...attrs}>
                         <PopperWrapper>
                             <h4 className={cx('search-title')}>Accounts</h4>
-                            {typeof searchResult !== 'undefined' &&
-                                searchResult.map((result) => <AccountItem key={result.id} data={result} />)}
+                            <SearchResult data={searchResult} />
                             <Link to={config.routes.search}>
                                 <p className={cx('search-footer')}>{`Xem tất cả kết quả dành cho "${searchvalue}"`}</p>
                             </Link>
