@@ -69,7 +69,7 @@ function Search() {
                     <div className={cx('search-result')} tabIndex="-1" {...attrs}>
                         <PopperWrapper>
                             <h4 className={cx('search-title')}>Accounts</h4>
-                            <SearchResult data={searchResult} />
+                            {Array.isArray(searchResult) && <SearchResult data={searchResult} />}
                             <Link to={config.routes.search}>
                                 <p className={cx('search-footer')}>{`Xem tất cả kết quả dành cho "${searchvalue}"`}</p>
                             </Link>
